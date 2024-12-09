@@ -26,7 +26,7 @@ function App() {
       <nav className='flex items-center w-screen justify-between bg-white p-5'>
         <img src={logo} alt="" />
         <div className='flex gap-x-20 pr-10 text-black'>
-          {NavigationItem(menu)}
+          <NavigationItem menu={menu}/> 
         </div>
       </nav>
     </>

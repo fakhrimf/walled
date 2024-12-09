@@ -1,11 +1,4 @@
-function NavigationItem(menu) {
-    // return (
-    //     <div className="flex gap-x-8">
-    //         {menu.map((item, index) => (
-    //             <a key={index} href={item.link}>{item.title}</a>
-    //         ))}
-    //         </div>
-    //     );
+function NavigationItem({menu}) {
     return(
             menu.map((item, index) => (
                 <a key={index} href={item.link} className='text-lg m-6 group relative w-max'>
