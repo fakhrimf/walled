@@ -1,7 +1,7 @@
 import bg from '/src/components/Money.png'
 import logo from '/src/components/logo-lg.png'
 import ActionButton from "/src/components/ActionButton";
-import useFetch from './useFetch';
+import useFetch from '../hooks/useFetch';
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
@@ -10,6 +10,7 @@ function Login() {
     const navigate = useNavigate();
     const [loggedIn, setLoggedIn] = useState(true);
     const [userData] = useFetch("http://localhost:3000/users")
+    const [success, setSuccess] = useState(false);
 
     const [loginForm, setLoginForm] = useState({
         email: "",
@@ -21,12 +22,10 @@ function Login() {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+        // Validation
         const user = userData?.find((each) => each.email === loginForm.email && each.password === loginForm.password);
-        if (!user) {
-            alert("Email or Password incorrect");
-            return;
-        } else {
+        if (user) {
+            setSuccess(false)
             navigate("/dashboard");
             localStorage.setItem("logged-in", "true")
             localStorage.setItem("user", JSON.stringify(user));
@@ -41,7 +40,7 @@ function Login() {
         } else {
             setLoggedIn(false);
         }
-    }, [navigate, loggedIn, setLoggedIn]);
+    }, [navigate, setLoggedIn]);
 
     return(
         <section className={loggedIn ? "hidden" : "flex w-full h-screen bg-white"}>
@@ -49,6 +48,7 @@ function Login() {
                 <div>
                     <img className="w-[290px] mx-auto" src={logo} alt="logo" />
                     <form className="flex flex-col mt-24 gap-y-5">
+                        <p className={success ? 'text-red-500 text-center' : 'hidden'}>Password atau email salah</p>
                         <input
                         className="bg-[#FAFBFD] pl-7 py-4 min-w-[400px] rounded-[10px] text-black"
                         name="email"
@@ -67,6 +67,7 @@ function Login() {
                         disabled={!loginForm.email || !loginForm.password}
                         onClick={handleSubmit}
                         >
+                        
                         Login
                         </ActionButton>
                     </form>
