@@ -21,9 +21,14 @@ function Navbar({activeTabNow}) {
         link: "/"
         },
     ]
+
     const [activeTab, setActiveTab] = useState(activeTabNow)
     const handleClick = (activeTab) => {
         setActiveTab(activeTab)
+        if (activeTab === "Signout") {
+            localStorage.setItem("logged-in", "false")
+            localStorage.removeItem("user")
+        }
     }
     return (
         <nav className='flex items-center w-screen justify-between bg-white p-5'>
