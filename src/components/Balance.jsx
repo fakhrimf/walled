@@ -9,7 +9,7 @@ function Balance() {
         <div className='flex flex-col justify-center ml-20'>
             <p className='text-black text-2xl'>Balance</p>
             <div className='flex flex-row items-center'>
-                <p className={showMoney ? 'text-black font-bold text-3xl' : 'hidden'}>Rp. 6.900.000,00 </p>
+                <p className={showMoney ? 'text-black font-bold text-3xl' : 'hidden'}>Rp. {JSON.parse(localStorage.getItem("user"))?.balance} </p>
                 <p className={showMoney ? 'hidden' :'text-black font-bold text-3xl'}>Rp. *************</p>
                 <a href='#' onClick={() => handleShowMoney(showMoney)} className='hover:bg-teal-500 m-2 rounded-full p-2 transition-all'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" className={showMoney ? "bi bi-eye" : 'hidden'} viewBox="0 0 16 16">

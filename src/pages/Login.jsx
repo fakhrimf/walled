@@ -1,6 +1,7 @@
 import bg from '/src/components/Money.png'
 import logo from '/src/components/logo-lg.png'
 import ActionButton from "/src/components/ActionButton";
+import useFetch from './useFetch';
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
@@ -8,6 +9,7 @@ import { Link } from "react-router";
 function Login() {
     const navigate = useNavigate();
     const [loggedIn, setLoggedIn] = useState(true);
+    const [userData] = useFetch("http://localhost:3000/users")
 
     const [loginForm, setLoginForm] = useState({
         email: "",
@@ -19,9 +21,16 @@ function Login() {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate("/dashboard");
-        localStorage.setItem("logged-in", "true")
-        localStorage.setItem("user", JSON.stringify(loginForm));
+        
+        const user = userData?.find((each) => each.email === loginForm.email && each.password === loginForm.password);
+        if (!user) {
+            alert("Email or Password incorrect");
+            return;
+        } else {
+            navigate("/dashboard");
+            localStorage.setItem("logged-in", "true")
+            localStorage.setItem("user", JSON.stringify(user));
+        }
     };
     // if (localStorage.getItem("logged-in") === "true") {
     //     navigate("/dashboard");

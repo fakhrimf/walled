@@ -27,8 +27,8 @@ function App() {
       <div className={loggedIn ? "" : "hidden"}>
         <Navbar activeTabNow={'Dashboard'}/>
         <div className='flex flex-row w-screen justify-between'>
-          <Greeting name={JSON.parse(localStorage.getItem("user"))?.email + "!"}/>
-          <AccountInfo name={JSON.parse(localStorage.getItem("user"))?.email}/>
+          <Greeting name={JSON.parse(localStorage.getItem("user"))?.nick + "!"}/>
+          <AccountInfo name={JSON.parse(localStorage.getItem("user"))?.name}/>
         </div>
         <div className='flex flex-row w-screen justify-start'>
           <AccountNo/>

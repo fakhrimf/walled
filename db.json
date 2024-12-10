@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "id" : 177013, 
+            "name" : "Muhammad Vyto Alfarisy", 
+            "nick" : "Vyto", 
+            "balance" : 1000, 
+            "avatar" : "https://media.licdn.com/dms/image/v2/D5603AQGLWZpk4-9haw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714210941650?e=1739404800&v=beta&t=5YOb_Eq9empvdcSZlvaQjM_xdKrTLUWwlRybPkhlIZo",
+            "email" : "vytogans@gmail.com",
+            "password" : "vytogans"
+        },
+        {
+            "id" : 354789, 
+            "name" : "Ariel Maximillian", 
+            "nick" : "Ariel", 
+            "balance" : 60000000, 
+            "avatar" : "https://media.licdn.com/dms/image/v2/D5603AQGLY6gavYteQw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1730290407695?e=2147483647&v=beta&t=qHQEblXu7UwGV8Kjb81IWmJaQiRl5ZB1iEN6FA_PC_o",
+            "email" : "arielgay@gmail.com",
+            "password" : "arielariel"
+        }
+    ]
+}
