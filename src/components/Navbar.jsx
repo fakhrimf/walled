@@ -16,7 +16,7 @@ function Navbar({activeTabNow}) {
         },
         {
         title: "Topup",
-        link: "#"
+        link: "/topup"
         },
         {
         title: "Signout",

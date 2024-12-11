@@ -3,20 +3,15 @@ import ActionButton from "../components/ActionButton"
 import InputAmount from "../components/InputAmount"
 import Navbar from "../components/Navbar"
 
-function Transfer() {
-    return(
+function Topup() {
+    return (
         <>
-            <Navbar activeTabNow={'Transfer'}/>
+            <Navbar activeTabNow='Topup'/>
             <div className="flex justify-center align-middle flex-col m-auto">
-                <h1 className="text-black font-bold ml-96 mt-10">Transfer</h1>
+                <h1 className="text-black font-bold ml-96 mt-10">Topup</h1>
                 <div className="bg-white shadow-lg rounded-3xl flex justify-center align-middle flex-col ml-96 mr-96 mt-4 p-10">
-                    <AccountFromTo isTransfer={true}/>
-                    <div className="m-2"/>
                     <InputAmount/>
-                    <div className="flex flex-row">
-                        <p className="text-black text-lg ml-2">Balance: </p>
-                        <p className="text-teal-600 font-bold ml-2 text-lg">IDR {JSON.parse(localStorage.getItem("user"))?.balance.toLocaleString()}</p>
-                    </div>
+                    <AccountFromTo/>
                     <div className="flex flex-col bg-slate-50 px-10 rounded-3xl mt-5 mb-16">
                         <div className="bg-slate-50 rounded-3xl flex justify-start align-middle flex-row">
                             <p className="flex align-middle justify-center text-black py-7 text-2xl">Notes: </p>
@@ -32,4 +27,4 @@ function Transfer() {
     )
 }
 
-export default Transfer
+export default Topup

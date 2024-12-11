@@ -6,6 +6,7 @@ import './index.css'
 import App from './App.jsx'
 import Login from './pages/Login.jsx'
 import Transfer from './pages/Transfer.jsx';
+import Topup from './pages/Topup.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/" index element={<Login />} />
           <Route path="/dashboard" element={<App />} />
           <Route path="/transfer" element={<Transfer />} />
+          <Route path="/topup" element={<Topup />} />
         {/* <PrivateRoute path="/dashboard" element={<App />} /> */}
         {/* <Route path="/home" element={<Home />} /> */}
       </Routes>
